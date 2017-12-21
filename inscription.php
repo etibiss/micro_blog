@@ -1,7 +1,8 @@
 <?php
 include('includes/connexion.inc.php');
 include('includes/haut.inc.php');
-require("tpl/smarty.class.php"); // On inclut la classe Smarty
+require_once("tpl/smarty.class.php"); // On inclut la classe Smarty
+
 
 $smarty = new Smarty();
 

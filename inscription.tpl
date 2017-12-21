@@ -12,8 +12,6 @@
     </div>
 </header>
 
-Hello World!
-
 <form class="form_inscription form-horizontal" action="inscription.php" method="POST">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>

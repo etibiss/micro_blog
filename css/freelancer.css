@@ -149,6 +149,7 @@ header .intro-text .skills {
 .navbar-custom .navbar-nav li a {
     color: white;
     text-align: right;
+    display: inline-block;
 }
 
 .bienvenue {

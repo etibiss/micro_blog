@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-11-22 16:31:05
+/* Smarty version 3.1.31, created on 2017-12-21 14:35:33
   from "C:\wamp\www\micro_blog\inscription.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a15a649834608_76330688',
+  'unifunc' => 'content_5a3bc6b5c471b3_76645724',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2c46a101f5ec78ab0706c0711e572db3a1b7530b' => 
     array (
       0 => 'C:\\wamp\\www\\micro_blog\\inscription.tpl',
-      1 => 1511368259,
+      1 => 1513866063,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a15a649834608_76330688 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a3bc6b5c471b3_76645724 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Header -->
 <header>
@@ -35,8 +35,6 @@ function content_5a15a649834608_76330688 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </div>
 </header>
-
-Hello World!
 
 <form class="form_inscription form-horizontal" action="inscription.php" method="POST">
     <div class="form-group">
