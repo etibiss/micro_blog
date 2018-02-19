@@ -18,6 +18,9 @@
         <!-- Theme CSS -->
         <link href="css/freelancer.css" rel="stylesheet">
 
+        <!-- Jquery CSS -->
+        <link href="css/jquery.css" rel="stylesheet" type="text/css">
+
         <!-- Custom Fonts -->
         <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!--

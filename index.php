@@ -76,7 +76,7 @@
                         $stmt->bindValue(':id',$_GET['id']);
                         $stmt->execute();
                         $data=$stmt->fetch();
-?>
+                ?>
                 <form method="POST" action="message.php?a=<?=$_GET['a']?>&id=<?=$data['id']?>">
                     <div class="col-sm-10">
                         <div class="form-group">
@@ -86,9 +86,8 @@
                             <input type="hidden" name="id" value="id" />
                         </div>
                     </div>
-
                     <div class="col-sm-2">
-                        <button type="submit" class="btn btn-success btn-lg">Modifier</button>
+                        <button type="submit" class="btn btn-warning btn-lg">Modifier</button>
                     </div>
                 </form>
                 <?php }else {?>
@@ -105,10 +104,33 @@
                 </form>
                 <?php }
                 }?>
-
             </div>
+
             <div class="row">
-                <?php $sql="SELECT * FROM messages ORDER BY date DESC" ; $stmt=$pdo->query($sql); while($data=$stmt->fetch()){ ?>
+                <form method="GET" action="index.php">
+                    <div class="col-sm-offset-7 col-sm-5" id="search">
+                        <div class="input-group add-on">
+                            <input type="search" name="search" class="form-control" placeholder="Rechercher un message" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <?php
+                    if(isset($_GET['search'])){
+                        $sql="SELECT * FROM messages WHERE contenu LIKE '%:search%' ORDER BY date DESC";
+                        $stmt=$pdo->query($sql);
+                        $stmt->bindValue(':search',$_GET['search']);
+                    }else {
+                        $sql="SELECT * FROM messages ORDER BY date DESC" ;
+                        $stmt=$pdo->query($sql);
+                    }
+                    while($data=$stmt->fetch()){
+                ?>
                 <blockquote>
                     <p>
                         <?php echo $data['contenu']; ?>
@@ -118,11 +140,12 @@
                     </footer>
                     <?php if($connecte_util == true){ ?>
                     <a href="message.php?a=sup&id=<?=$data['id']?>" class="btn btn-danger">Supprimer</a>
-                    <a href="index.php?a=mod&id=<?=$data['id']?>" class="btn btn-primary">Modifier</a>
+                    <a href="index.php?a=mod&id=<?=$data['id']?>" class="btn btn-warning">Modifier</a>
                     <?php } ?>
                 </blockquote>
                 <?php } ?>
             </div>
+        </div>
     </section>
     <?php
     include('includes/bas.inc.php');
