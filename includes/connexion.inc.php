@@ -1,4 +1,4 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=micro_blog','root','');
+$pdo = new PDO('mysql:host=124667;dbname=micro_blog_ebissuel','root','');
 
 ?>
