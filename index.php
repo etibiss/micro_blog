@@ -137,11 +137,12 @@
                     while($data=$stmt->fetch()){
                 ?>
                     <blockquote>
-                        <p>
+                        <p class="msg_content">
                             <?php echo $data['contenu']; ?>
                         </p>
                         <footer>
                             <?php echo date('d/m/Y à H:i:s',$data['date']);?>
+                            <button class="btn-like"><span class="glyphicon glyphicon-thumbs-up">Like</span></button>
                         </footer>
                         <?php if($connecte_util == true){ ?>
                         <a href="message.php?a=sup&id=<?=$data['id']?>" class="btn btn-danger">Supprimer</a>
@@ -152,6 +153,40 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".btn-like").click(function(e) {
+                if ($(this).children().text() == "Like") {
+                    $(this).children().text('Unlike');
+                    $(this).children().removeClass('glyphicon-thumbs-up');
+                    $(this).children().addClass('glyphicon-thumbs-down');
+                    $(this).css('box-shadow', '0px 0px 5px blue');
+                } else {
+                    $(this).children().text('Like');
+                    $(this).children().removeClass('glyphicon-thumbs-down');
+                    $(this).children().addClass('glyphicon-thumbs-up');
+                    $(this).css('box-shadow', 'none');
+                }
+                return false;
+            });
+
+            var email = '[\w]*\.*[\w]+@([a-z]+\.[a-z])+/g';
+            var tel = '(0+[1-9])\.?\s?([0-9]{2})\.?\s?([0-9]{2})\.?\s?([0-9]{2})\.?\s?([0-9]{2})/gx';
+            var url = 'https?:\/\/([\w]+\.?[\w]+)\S*\/([\w]+\.?[\w]*)/g';
+            var msg = ('.msg_content').text();
+            msg.replace(email, "<a href='mailto:" + msg.match(email) + "'>" + msg.match(email) + "</a>");
+            msg.replace(tel, "<a href='tel:" + msg.match(tel) + "'>" + msg.match(tel) + "</a>");
+            msg.replace(url, "<a href='" + msg.match(url) + "'>" + msg.match(url) + "</a>");
+
+            console.log(regex1.test(str1));
+
+        });
+
+    </script>
+
     <?php
     include('includes/bas.inc.php');
 ?>

@@ -55,6 +55,7 @@
                 </p>
                 <footer>
                     <?php echo date('d/m/Y à H:i:s',{$all_data.date}); ?>
+
                 </footer>
                 {if connecte}
                 <a href="message.php?a=sup&id=<?=$data['id']?>" class="btn btn-danger">Supprimer</a>

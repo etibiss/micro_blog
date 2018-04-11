@@ -619,3 +619,21 @@ textarea {
     font-size: 20px;
     padding-top: 24px;
 }
+
+.btn-like {
+    margin-left: 10px;
+}
+
+.glyphicon-thumbs-up:before,
+.glyphicon-thumbs-down:before {
+    padding-right: 5px;
+}
+
+
+.glyphicon-thumbs-up {
+    color: blue
+}
+
+.glyphicon-thumbs-down {
+    color: red
+}
