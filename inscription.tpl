@@ -55,13 +55,23 @@
                     $(this).next('.alert').show();
                     $(this).next('.alert').html("<span>Ce champ est vide, veuillez le remplir svp !</span>");
                 }
+                var re = "[\w] * \.*[\w] + @([a - z] + \.[a - z] + ) / gi";
+                if (!(re.test($('#email')))) {
+                    $(this).next('.alert').show();
+                    $(this).next('.alert').html("<span>L'email écrit est incorrecte, veuillez réessayer !</span>");
+                }
                 $(this).keydown(function() {
                     $(this).next('.alert').hide();
                 });
             });
 
+
             return false;
         });
     });
+
+    // Email ->	[\w]*\.*[\w]+@([a-z]+\.[a-z]+)
+    // Tel ->	(0+[1-9])\.?\s?([0-9]{2})\.?\s?([0-9]{2})\.?\s?([0-9]{2})\.?\s?([0-9]{2})
+    // URL ->	https?:\/\/([\w]+\.?[\w]+)\S*\/([\w]+\.?[\w]*)
 
 </script>

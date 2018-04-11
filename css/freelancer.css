@@ -608,8 +608,14 @@ blockquote {
 
 #search {
     padding: 20px 0 10px;
+    float: right;
 }
 
 textarea {
     resize: vertical;
+}
+
+#search-retour {
+    font-size: 20px;
+    padding-top: 24px;
 }

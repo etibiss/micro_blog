@@ -13,7 +13,6 @@ if(isset($_POST['email'])){
     $prep->bindValue(':mdp',md5($_POST['mdp']));
     $sid= md5($_POST['email'].time());    
     $prep->bindValue(':sid',$sid);
-    $cookie = setcookie('sid',$sid,time()+15*60);
     $prep->execute();
     $prep->rowCount();
     header("location:index.php");

@@ -108,7 +108,12 @@
 
             <div class="row">
                 <form method="GET" action="index.php">
-                    <div class="col-sm-offset-7 col-sm-5" id="search">
+                    <?php if(isset($_GET['search'])){ ?>
+                    <div class="col-sm-6" id="search-retour">
+                        <a href="index.php">&#8592; Retour à l'accueil</a>
+                    </div>
+                    <?php } ?>
+                    <div class="col-sm-6" id="search">
                         <div class="input-group add-on">
                             <input type="search" name="search" class="form-control" placeholder="Rechercher un message" />
                             <div class="input-group-btn">
@@ -131,19 +136,19 @@
                     }
                     while($data=$stmt->fetch()){
                 ?>
-                <blockquote>
-                    <p>
-                        <?php echo $data['contenu']; ?>
-                    </p>
-                    <footer>
-                        <?php echo date('d/m/Y à H:i:s',$data['date']);?>
-                    </footer>
-                    <?php if($connecte_util == true){ ?>
-                    <a href="message.php?a=sup&id=<?=$data['id']?>" class="btn btn-danger">Supprimer</a>
-                    <a href="index.php?a=mod&id=<?=$data['id']?>" class="btn btn-warning">Modifier</a>
+                    <blockquote>
+                        <p>
+                            <?php echo $data['contenu']; ?>
+                        </p>
+                        <footer>
+                            <?php echo date('d/m/Y à H:i:s',$data['date']);?>
+                        </footer>
+                        <?php if($connecte_util == true){ ?>
+                        <a href="message.php?a=sup&id=<?=$data['id']?>" class="btn btn-danger">Supprimer</a>
+                        <a href="index.php?a=mod&id=<?=$data['id']?>" class="btn btn-warning">Modifier</a>
+                        <?php } ?>
+                    </blockquote>
                     <?php } ?>
-                </blockquote>
-                <?php } ?>
             </div>
         </div>
     </section>

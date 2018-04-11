@@ -2,3 +2,50 @@
     margin: 0;
     padding: 6px 12px;
 }
+
+.sprite {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background-image: url(../img/SM_icon.png);
+}
+
+.sprite.gp {
+    background-position: 48px 0;
+}
+
+.sprite.ig {
+    background-position: 96px 0;
+}
+
+.sprite.tw {
+    background-position: 144px 0;
+}
+
+.sprite.yt {
+    background-position: 192px 0;
+}
+
+.sprite.fb {
+    background-position: 240px 0;
+}
+
+.sprite.gp:hover {
+    background-position: 48px 48px;
+}
+
+.sprite.ig:hover {
+    background-position: 96px 48px;
+}
+
+.sprite.tw:hover {
+    background-position: 144px 48px;
+}
+
+.sprite.yt:hover {
+    background-position: 192px 48px;
+}
+
+.sprite.fb:hover {
+    background-position: 240px 48px;
+}

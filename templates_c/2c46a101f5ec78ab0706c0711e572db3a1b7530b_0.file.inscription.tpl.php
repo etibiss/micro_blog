@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2018-02-14 13:04:46
+/* Smarty version 3.1.31, created on 2018-03-27 14:27:48
   from "C:\wamp\www\micro_blog\inscription.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a8433ee1943b1_23102632',
+  'unifunc' => 'content_5aba54e47c7ec4_53995010',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2c46a101f5ec78ab0706c0711e572db3a1b7530b' => 
     array (
       0 => 'C:\\wamp\\www\\micro_blog\\inscription.tpl',
-      1 => 1518613482,
+      1 => 1522160862,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a8433ee1943b1_23102632 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aba54e47c7ec4_53995010 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Header -->
 <header>
@@ -82,14 +82,28 @@ function content_5a8433ee1943b1_23102632 (Smarty_Internal_Template $_smarty_tpl)
                     $(this).next('.alert').show();
                     $(this).next('.alert').html("<span>Ce champ est vide, veuillez le remplir svp !</span>");
                 }
+                var re = "[\w] * \.*[\w] + @([a - z] + \.[a - z] + ) / gi";
+                if (!(re.test($('#email')))) {
+                    $(this).next('.alert').show();
+                    $(this).next('.alert').html("<span>L'email écrit est incorrecte, veuillez réessayer !</span>");
+                }
                 $(this).keydown(function() {
                     $(this).next('.alert').hide();
                 });
             });
 
+
             return false;
         });
     });
+
+    // Email ->	[\w]*\.*[\w]+@([a-z]+\.[a-z]+)
+    // Tel ->	(0+[1-9])\.?\s?([0-9]<?php echo 2;?>
+)\.?\s?([0-9]<?php echo 2;?>
+)\.?\s?([0-9]<?php echo 2;?>
+)\.?\s?([0-9]<?php echo 2;?>
+)
+    // URL ->	https?:\/\/([\w]+\.?[\w]+)\S*\/([\w]+\.?[\w]*)
 
 <?php echo '</script'; ?>
 >
